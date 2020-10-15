@@ -1,20 +1,13 @@
 import React from 'react';
 import './App.css';
-import Title from './components/Title';
-import Img from './components/Img';
-import LinkReact from './components/LinkReact.js';
+import Navbar from './components/Navbar';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">       
+  return (    
 
-      <Img/>
-        <Title/>
-        <LinkReact/>
-        
-      </header>
-    </div>
+    <Navbar/>
+
   );
 }
 
