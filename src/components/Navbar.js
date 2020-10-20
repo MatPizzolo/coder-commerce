@@ -1,106 +1,44 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import 'fontsource-roboto';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
-import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 
 const useStyles = makeStyles((theme) => ({
-    
   root: {
-    flexGrow: 1,
+    color: 'red',
+    fontSize: '30px',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  navItemss: {
+    fontSize: '20px',
   },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+  navItemss2: {
+    fontSize: '20px',
   },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
+  navColor: {
+    backgroundColor: '#1569C7'
+  }
 }));
 
-export default function Navbar() {
+function NavbarApp() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <RestaurantMenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Coder-commerce
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Navbar className={classes.navColor} collapseOnSelect expand="lg"  variant="dark" >
+    <Navbar.Brand href="#home" className={classes.root}>Verified</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link href="#features" className={classes.navItemss}>Browse</Nav.Link>
+        <Nav.Link href="#pricing" className={classes.navItemss}>New</Nav.Link>
+      </Nav>
+      <Nav>
+        <Nav.Link href="#deets" className={classes.navItemss2}>Login</Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
   );
 }
+
+export default NavbarApp;
