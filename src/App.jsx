@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import NavbarApp from './components/Navbar';
-
+import NavbarApp from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
         <NavbarApp />
 
     <h2>Las ofertas de la semana</h2>
+      
+      <Home />
 
     </>
   );

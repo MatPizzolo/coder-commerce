@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { makeStyles } from '@material-ui/core/styles';
-
+import CartWidget from './Cart';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,10 +34,12 @@ function NavbarApp() {
         <Nav.Link href="#pricing" className={classes.navItemss}>New</Nav.Link>
       </Nav>
       <Nav>
-        <Nav.Link href="#deets" className={classes.navItemss2}>Login</Nav.Link>
+        <Nav.Link href="#deets" className={classes.navItemss2}> <CartWidget /> </Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
+
+
   );
 }
 
