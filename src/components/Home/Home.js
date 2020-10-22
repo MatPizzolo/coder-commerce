@@ -20,7 +20,7 @@ function Home() {
     );
 }
   
-export default Home;
+ export default Home;
 
 function ItemListContainer({title}) {
     const classes = useStyles();
